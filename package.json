@@ -11,7 +11,10 @@
   "author": "anirudh chhangani",
   "license": "MIT",
   "dependencies": {
+    "apollo-client": "^1.3.0",
     "bootstrap": "^3.3.7",
+    "firebase": "^4.0.0",
+    "graphql-tag": "^2.2.1",
     "mithril": "^1.1.1",
     "webpack": "^2.5.1"
   },

@@ -2,7 +2,7 @@ const path = require('path');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
-    entry: path.resolve(__dirname, 'src/index.js'),
+    entry: path.resolve(__dirname, 'src/index.jsx'),
     output: {
         path: path.resolve(__dirname, 'assets'),
         sourceMapFilename: "./app.js.map",
@@ -24,8 +24,10 @@ module.exports = {
                 use: ["css-loader"]
             })
         },
-        { test: /\.(png|woff|woff2|eot|ttf|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: 'url-loader?limit=100000' }
-        ]
+        { 
+            test: /\.(png|woff|woff2|eot|ttf|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+            loader: 'url-loader?limit=100000' 
+        }]
     },
     devServer: {
       contentBase: path.join(__dirname, "src"),

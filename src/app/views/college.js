@@ -1,5 +1,5 @@
 var m = require("mithril")
-var CollegeModel = require("./model.js")
+var CollegeModel = require("../models/college.js")
 
 
 var CollegeView = {
