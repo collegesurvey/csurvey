@@ -9,9 +9,9 @@ var About = require("./app/views/about.js")
 
 
 var CsurveyApp = {
-    view: function(vnode){
-        return (            
-            <main class="layout">
+	view: function(vnode){
+		return (            
+			<main class="layout">
 				<nav class="navbar navbar-inverse navbar-fixed-top">
 					<div>
 						<div class="navbar-header">
@@ -33,24 +33,24 @@ var CsurveyApp = {
 					{vnode.children}
 				</section>
 			</main>
-        )
-    }
+		)
+	}
 }
 
 m.route(document.body, "/", {
-    "/": {
-        render: function(vnode) {
-            return m(CsurveyApp, m(CollegeView))
-        }
-    },
-    "/about": {
-        render: function(vnode) {
-            return m(CsurveyApp, m(About))
-        }
-    },
+	"/": {
+		render: function(vnode) {
+			return m(CsurveyApp, m(CollegeView))
+		}
+	},
+	"/about": {
+		render: function(vnode) {
+			return m(CsurveyApp, m(About))
+		}
+	},
 	"/login": {
-        render: function(vnode) {
-            return m(CsurveyApp, m(LoginView))
-        }
-    }
+		render: function(vnode) {
+			return m(CsurveyApp, m(LoginView))
+		}
+	}
 })
