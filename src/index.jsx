@@ -4,7 +4,7 @@ require("../node_modules/bootstrap/dist/css/bootstrap.css")
 require("./public/css/starter-template.css")
 
 var LoginView = require("./app/views/login.jsx")
-var CollegeView = require("./app/views/college.js")
+var CollegeView = require("./app/views/college.jsx")
 var About = require("./app/views/about.js")
 
 

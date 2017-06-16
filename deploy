@@ -5,3 +5,5 @@ gsutil cp -r assets  gs://www.collegesurvey.in
 gsutil cp src/index.html  gs://www.collegesurvey.in
 gsutil cp src/404.html  gs://www.collegesurvey.in
 gsutil web set -m index.html -e 404.html gs://www.collegesurvey.in
+
+gsutil iam ch allUsers:objectViewer gs://www.collegesurvey.in
