@@ -1,5 +1,6 @@
 #!bin/bash
 
+npm build
 gsutil cp -r assets  gs://www.collegesurvey.in
 gsutil cp src/index.html  gs://www.collegesurvey.in
 gsutil cp src/404.html  gs://www.collegesurvey.in
