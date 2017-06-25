@@ -1,5 +1,5 @@
 var m  = require("mithril")
-var UserRegistration = require("./registerUser.jsx")
+var UserRegistration = require("./userRegistration.jsx")
 
 class LoginView {
 

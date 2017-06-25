@@ -1,5 +1,5 @@
 var m = require('mithril')
-var ClassicUserModel = require("../models/user.js")
+var ClassicUserModel = require("./user.js")
 
 //data binding helper function
 function binds(data) {
@@ -34,6 +34,7 @@ class UserRegistration {
                 Password:<br />
                 <input type="password" name="password" value={this.password}/>
                 <button onclick={this.register.bind(this)}>Submit</button>
+                <div class="g-recaptcha" data-sitekey="6LfMPCYUAAAAAMH_Ji68_q6lcQ2ReE7dO_RVHmYv"></div>
             </form>
           </div>
         )

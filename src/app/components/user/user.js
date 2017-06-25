@@ -1,5 +1,5 @@
 var m = require("mithril")
-var backend = require("../common/backend.js")
+var backend = require("../../common/backend.js")
 
 var gql = require("graphql-tag")
 
@@ -28,7 +28,11 @@ class ClassicUserModel {
             email: email,
             password: password
         }
-        var user = await backend.mutate(UserCreateQuery, data)
+        try{
+            var user = await backend.mutate(UserCreateQuery, data)
+        } catch(e) {
+            console.log(e)
+        }
     }
 }
 

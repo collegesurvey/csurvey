@@ -3,10 +3,9 @@ var m = require("mithril")
 var About = {
     view: function() {
         return (
-            m(
-                ".about", 
-                "Lookup colleges near your location"
-            )
+            <div class="about">
+                College reviews by students for students
+            </div>
         )
     }
 }
