@@ -18,7 +18,8 @@ class Graphcool {
 
     async query(q) {
         data = await this.client.query({
-            query: q
+            query: q,
+            variables: data
         })
         return data
     }

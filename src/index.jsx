@@ -4,7 +4,8 @@ require("../node_modules/bootstrap/dist/css/bootstrap.css")
 require("./public/css/starter-template.css")
 
 var LoginView = require("./app/components/user/login.jsx")
-var HomeView = require("./app/components/home/home.jsx")
+var HomeView = require("./app/components/home/home.jsx"
+var DashView = require("./app/components/dashboard/dash.jsx"))
 var About = require("./app/components/about/about.jsx")
 
 
@@ -51,6 +52,11 @@ m.route(document.body, "/", {
 	"/login": {
 		render: function(vnode) {
 			return m(CsurveyApp, m(LoginView))
+		}
+	},
+	"/dash": {
+		render: function(vnode) {
+			return m(CsurveyApp, m(DashView))
 		}
 	}
 })
