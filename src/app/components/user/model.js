@@ -21,7 +21,7 @@ const UserCreateQuery = gql`
 `
 
 const UserLoginQuery = gql`
-    loginUser($name: String!, $email: String!, $password: String!) {
+    query loginUser($name: String!, $email: String!, $password: String!) {
             loginUser(
                 username: $name
                 password: $password

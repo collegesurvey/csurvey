@@ -17,7 +17,7 @@ class UserLogin {
         }
     }
 
-    register(event) {
+    login(event) {
       event.preventDefault()
       return new ClassicUserModel().login(this.user.username, this.user.password)
     }
@@ -30,7 +30,7 @@ class UserLogin {
                 <input type="text" name="username" value={this.username}/><br />
                 Password:<br />
                 <input type="password" name="password" value={this.password}/>
-                <button onclick={this.register.bind(this)}>Submit</button>
+                <button onclick={this.login.bind(this)}>Submit</button>
                 <div class="g-recaptcha" data-sitekey="6LfMPCYUAAAAAMH_Ji68_q6lcQ2ReE7dO_RVHmYv"></div>
             </form>
           </div>

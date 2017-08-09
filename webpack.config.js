@@ -31,7 +31,7 @@ module.exports = {
         }]
     },
     devServer: {
-      contentBase: path.join(__dirname, "src"),
+      contentBase: path.join(__dirname, "assets"),
       compress: false,
       port: 9000,
       watchContentBase: true,
