@@ -52,7 +52,7 @@ class ClassicUserModel {
             password: password
         }
         try{
-            var user = await backend.mutate(UserLoginQuery, data)
+            var user = await backend.query(UserLoginQuery, data)
         } catch(e) {
             console.log(e)
         }

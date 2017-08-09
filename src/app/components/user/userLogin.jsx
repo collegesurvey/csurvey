@@ -9,7 +9,7 @@ function binds(data) {
 };
 
 
-class UserRegistration {
+class UserLogin {
     constructor() {
         this.user = {
           username: "",
@@ -37,4 +37,4 @@ class UserRegistration {
         )
     }
 }
-module.exports = UserRegistration
+module.exports = UserLogin
