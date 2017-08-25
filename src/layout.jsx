@@ -1,5 +1,7 @@
 var m = require("mithril")
 
+var Account = require("./app/pages/account/view.jsx")
+
 var Layout = {
 	view: function(vnode){
 		return (            
@@ -15,7 +17,7 @@ var Layout = {
 									<a href="/about" oncreate={m.route.link}>About</a>
 								</li>
 								<li>
-									<a href="/login" oncreate={m.route.link}>Login</a>
+									<Account name={"Guest"}/>
 								</li>
 							</ul>
 						</div>
