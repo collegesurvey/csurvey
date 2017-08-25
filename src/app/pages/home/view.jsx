@@ -1,12 +1,11 @@
 var m = require("mithril")
 
-
-var HomeView = {
+var Home = {
     view: function(){
         return (
-            <ArticleFeed />
+            <div>Under contruction</div>
         )
     }
 }
 
-module.exports = HomeView
+module.exports = Home

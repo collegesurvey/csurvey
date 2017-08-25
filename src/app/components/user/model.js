@@ -9,8 +9,8 @@ const UserCreateQuery = gql`
                 username: $name
                 authProvider: {
                     email: {
-                    email: $email
-                    password: $password
+                        email: $email
+                        password: $password
                     }
                 }
             ) {

@@ -1,6 +1,6 @@
-var m = require('mithril')
+var m = require("mithril")
 
-var ArticleStore = {
+var ArticleModel = {
     async get() {
         return {
             id: 12,
@@ -52,3 +52,5 @@ var ArticleStore = {
 
     }
 }
+
+module.exports = ArticleModel
