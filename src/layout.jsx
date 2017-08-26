@@ -17,7 +17,7 @@ var Layout = {
 									<a href="/about" oncreate={m.route.link}>About</a>
 								</li>
 								<li>
-									<Account name={"Guest"}/>
+									<Account name="Guest"/>
 								</li>
 							</ul>
 						</div>
