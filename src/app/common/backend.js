@@ -1,6 +1,7 @@
 import ApolloClient, { createNetworkInterface } from 'apollo-client';
 import { config } from '../data/config.js'
 
+
 class Graphcool {
     constructor() {
         this.graphcool = config.graphcool.key

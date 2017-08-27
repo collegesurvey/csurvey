@@ -21,17 +21,22 @@ const UserCreateQuery = gql`
 `
 
 const UserLoginQuery = gql`
-    query loginUser($name: String!, $email: String!, $password: String!) {
-            loginUser(
-                username: $name
-                password: $password
+    mutation SigninUser($email: String!, $password: String!) {
+            signinUser(email: {
+                    email: $email
+                    password: $password
+                }
             ) {
-                username
+                token
             }
         }
 `
 
 class ClassicUserModel {
+
+    constructor(){
+        this.token = ""
+    }
 
     async create(name, email, password) {
         var data = {
@@ -40,23 +45,27 @@ class ClassicUserModel {
             password: password
         }
         try{
-            var user = await backend.mutate(UserCreateQuery, data)
+            var user = await backend.mutate(UserCreateQuery, data)           
         } catch(e) {
             console.log(e)
         }
     }
 
-    async login(name, email, password) {
+    async login(email, password) {
         var data = {
-            name: name,
+            email: email,
             password: password
         }
         try{
-            var user = await backend.query(UserLoginQuery, data)
+            var user = await backend.mutate(UserLoginQuery, data)
+            this.token = user.data.signinUser.token
         } catch(e) {
             console.log(e)
         }
     }
 }
 
-module.exports = ClassicUserModel
+// need singleton of this guy
+const User = new ClassicUserModel()
+
+module.exports = User
