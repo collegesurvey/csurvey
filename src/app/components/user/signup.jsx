@@ -30,14 +30,14 @@ class Signup {
     view(vnode) {
         return (
            <div>
-            <form id="registration" onchange={binds(this.user)}>
+            <form id="signup" onchange={binds(this.user)}>
                 UserName:<br />
                 <input type="text" name="username" value={this.username}/><br />
                 Email:<br />
                 <input type="text" name="email" value={this.email} /><br />
                 Password:<br />
-                <input type="password" name="password" value={this.password}/>
-                <button onclick={this.register.bind(this)}>Submit</button>
+                <input type="password" name="password" value={this.password}/><br />
+                <button onclick={this.register.bind(this)}>Submit</button><br />
                 <Recaptcha />
             </form>
           </div>

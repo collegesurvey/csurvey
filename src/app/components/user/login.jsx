@@ -1,4 +1,6 @@
 var m = require('mithril')
+
+var Recaptcha = require("../../common/recaptcha.js")
 var ClassicUserModel = require("./model.js")
 
 //data binding helper function
@@ -29,9 +31,9 @@ class Login {
                 UserName:<br />
                 <input type="text" name="username" value={this.username}/><br />
                 Password:<br />
-                <input type="password" name="password" value={this.password}/>
-                <button onclick={this.login.bind(this)}>Submit</button>
-                <div class="g-recaptcha" data-sitekey="6LfMPCYUAAAAAMH_Ji68_q6lcQ2ReE7dO_RVHmYv"></div>
+                <input type="password" name="password" value={this.password}/><br />
+                <button onclick={this.login.bind(this)}>Submit</button><br />
+                <Recaptcha />
             </form>
           </div>
         )
