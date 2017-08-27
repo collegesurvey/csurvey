@@ -1,7 +1,7 @@
 var m = require("mithril")
 
 
-var DashView = {
+var Dash = {
     view: function(){
         return (
             <div>User Dashboard</div>
@@ -9,4 +9,4 @@ var DashView = {
     }
 }
 
-module.exports = DashView
+module.exports = Dash

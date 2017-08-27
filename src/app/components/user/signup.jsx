@@ -1,4 +1,5 @@
 var m = require('mithril')
+var Recaptcha = require("../../common/recaptcha.js")
 var ClassicUserModel = require("./model.js")
 
 //data binding helper function
@@ -9,12 +10,15 @@ function binds(data) {
 };
 
 
-class UserRegistration {
-    constructor() {
+class Signup {
+    oninit() {
         this.user = {
           username: "",
           email: "",
-          password: ""
+          password: "",
+        }
+        this.captcha = {
+          meta: ""
         }
     }
 
@@ -34,10 +38,11 @@ class UserRegistration {
                 Password:<br />
                 <input type="password" name="password" value={this.password}/>
                 <button onclick={this.register.bind(this)}>Submit</button>
-                <div class="g-recaptcha" data-sitekey="6LfMPCYUAAAAAMH_Ji68_q6lcQ2ReE7dO_RVHmYv"></div>
+                <Recaptcha />
             </form>
           </div>
         )
     }
 }
-module.exports = UserRegistration
+
+module.exports = Signup

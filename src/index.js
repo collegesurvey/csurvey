@@ -10,6 +10,10 @@ var Home = require("./app/pages/home/view.jsx")
 var About = require("./app/pages/about/view.jsx")
 var Dash = require("./app/pages/dashboard/view.jsx")
 
+var Login = require("./app/components/user/login.jsx")
+var Signup = require("./app/components/user/signup.jsx")
+
+
 
 m.route(document.body, "/", {
 	"/": {
@@ -25,6 +29,16 @@ m.route(document.body, "/", {
 	"/account/dash": {
 		render: function(vnode) {
 			return m(Layout, m(Dash))
+		}
+	},
+	"/account/signup": {
+		render: function(vnode) {
+			return m(Layout, m(Signup))
+		}
+	},
+	"/account/login": {
+		render: function(vnode) {
+			return m(Layout, m(Login))
 		}
 	}
 })
