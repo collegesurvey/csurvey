@@ -1,6 +1,6 @@
 var m = require('mithril')
 var Recaptcha = require("../../common/recaptcha.js")
-var ClassicUserModel = require("./model.js")
+var User = require("./model.js")
 
 //data binding helper function
 function binds(data) {
@@ -24,7 +24,7 @@ class Signup {
 
     register(event) {
       event.preventDefault()
-      return new ClassicUserModel().create(this.user.username, this.user.email, this.user.password)
+      return User.create(this.user.username, this.user.email, this.user.password)
     }
 
     view(vnode) {
