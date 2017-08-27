@@ -27,13 +27,15 @@ class Login {
     view(vnode) {
         return (
            <div>
-            <form id="login" onchange={binds(this.user)}>
-                UserName:<br />
-                <input type="text" name="username" value={this.username}/><br />
-                Password:<br />
-                <input type="password" name="password" value={this.password}/><br />
-                <button onclick={this.login.bind(this)}>Submit</button><br />
-                <Recaptcha />
+            <form class="form-inline" id="login" onchange={binds(this.user)}>
+              <div class="form-group">
+                  UserName:<br />
+                  <input type="text" name="username" value={this.username}/><br />
+                  Password:<br />
+                  <input type="password" name="password" value={this.password}/><br />
+                  <button onclick={this.login.bind(this)}>Submit</button><br />
+                  <Recaptcha />
+              </div>
             </form>
           </div>
         )

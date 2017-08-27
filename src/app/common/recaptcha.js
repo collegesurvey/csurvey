@@ -8,7 +8,7 @@ class Recaptcha {
     
     view(vnode) {
         return (
-            <div id="g-recaptcha">Captcha</div>
+            <div id="g-recaptcha"/>
         )
     }
 }
