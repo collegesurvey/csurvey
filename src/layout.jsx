@@ -11,7 +11,7 @@ var Layout = {
 		var user = JSON.parse(localStorage.getItem(constants.USER))
 
 		if ( user ) {
-			vnode.attrs.user = user.email
+			vnode.attrs.user = user.username
 			vnode.attrs.user_token = user.token
 		} else {
 			vnode.attrs.user = "Guest"

@@ -29,6 +29,10 @@ const UserLoginQuery = gql`
                     password: $password
                 }
             ) {
+                user {
+                    username,
+                    email
+                }
                 token
             }
         }
@@ -40,6 +44,18 @@ class ClassicUserModel {
         this.token = ""
     }
 
+    setUserMeta(user) {
+        var user_meta = {
+            token: user.data.signinUser.token,
+            email: user.data.signinUser.user.email,
+            username: user.data.signinUser.user.username 
+        }
+        localStorage.setItem(
+            constants.USER,
+            JSON.stringify(user_meta)
+        )
+    }
+
     async create(name, email, password) {
         var data = {
             name: name,
@@ -48,7 +64,7 @@ class ClassicUserModel {
         }
         try{
             var user = await backend.mutate(UserCreateQuery, data)
-
+            this.setUserMeta(user)
             m.route.set("/account/dash")
         } catch(e) {
             console.log(e)
@@ -62,16 +78,7 @@ class ClassicUserModel {
         }
         try{
             var user = await backend.mutate(UserLoginQuery, data)
-
-            var user_meta = {
-                token: user.data.signinUser.token,
-                email: email 
-            }
-            localStorage.setItem(
-                constants.USER,
-                JSON.stringify(user_meta)
-            )
-
+            this.setUserMeta(user)
             m.route.set("/account/dash")
         } catch(e) {
             console.log(e)
