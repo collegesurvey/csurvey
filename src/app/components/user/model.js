@@ -64,8 +64,7 @@ class ClassicUserModel {
         }
         try{
             var user = await backend.mutate(UserCreateQuery, data)
-            this.setUserMeta(user)
-            m.route.set("/account/dash")
+            m.route.set("/login")
         } catch(e) {
             console.log(e)
         }
