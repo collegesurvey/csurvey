@@ -9,8 +9,8 @@ class Guest {
                     <span class="caret"></span>
                 </a>
                 <ul class="dropdown-menu">
-                    <li><a href="#!/account/login">Login</a></li>
-                    <li><a href="#!/account/signup">Signup</a></li>
+                    <li><a href="#!/login">Login</a></li>
+                    <li><a href="#!/signup">Signup</a></li>
                 </ul>
             </li>
         )

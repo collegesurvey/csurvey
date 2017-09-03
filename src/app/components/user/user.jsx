@@ -12,7 +12,7 @@ class User {
                     <li><a href="#!/account/dash">Dashboard</a></li>
                     <li><a href="#!/account/profile">Profile</a></li>
                     <li role="separator" class="divider"></li>
-                    <li><a href="#!/account/logout">Logout</a></li>
+                    <li><a href="#!/logout">Logout</a></li>
                 </ul>
             </li>
         )

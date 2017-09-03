@@ -11,6 +11,7 @@ var About = require("./app/pages/about/view.jsx")
 var Dash = require("./app/pages/dashboard/view.jsx")
 
 var Login = require("./app/components/user/login.jsx")
+var Logout = require("./app/components/user/logout.jsx")
 var Signup = require("./app/components/user/signup.jsx")
 
 
@@ -26,19 +27,24 @@ m.route(document.body, "/", {
 			return m(Layout, m(About))
 		}
 	},
+	"/signup": {
+		render: function(vnode) {
+			return m(Layout, m(Signup))
+		}
+	},
+	"/login": {
+		render: function(vnode) {
+			return m(Layout, m(Login))
+		}
+	},
+	"/logout": {
+		render: function(vnode) {
+			return m(Layout, m(Logout))
+		}
+	},
 	"/account/dash": {
 		render: function(vnode) {
 			return m(Layout, m(Dash))
 		}
 	},
-	"/account/signup": {
-		render: function(vnode) {
-			return m(Layout, m(Signup))
-		}
-	},
-	"/account/login": {
-		render: function(vnode) {
-			return m(Layout, m(Login))
-		}
-	}
 })
