@@ -1,9 +1,9 @@
 const path = require('path');
-var CopyWebpackPlugin = require('copy-webpack-plugin');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
+let CopyWebpackPlugin = require('copy-webpack-plugin');
+let ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
-    entry: path.resolve(__dirname, 'src/index.js'),
+    entry: path.resolve(__dirname, 'src/index.ts'),
     output: {
         path: path.resolve(__dirname, 'assets'),
         sourceMapFilename: "./app.js.map",
@@ -11,12 +11,15 @@ module.exports = {
         filename: 'app.js',
         publicPath: "/assets/"
     },
+    resolve: {
+        extensions: [".js", ".jsx", ".ts"]
+    },
     devtool: 'eval-source-map',
     module: {
         loaders: [{
-            test: /\.(js|jsx)$/,
+            test: /\.(ts|tsx)$/,
             exclude: /node_modules/,
-            loader: 'babel-loader'
+            loader: 'ts-loader'
         },
         {
             test: /\.css$/,
@@ -46,4 +49,4 @@ module.exports = {
             { from: 'public/html' }
         ])
     ]
-}
+};
