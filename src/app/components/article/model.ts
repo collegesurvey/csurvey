@@ -1,8 +1,6 @@
-let m = require("mithril");
-
 export class ArticleModel {
 
-    async get() {
+    static get(resource) {
         return {
             id: 12,
             body: "this is a article with id 12",
@@ -11,11 +9,11 @@ export class ArticleModel {
         }
     }
 
-    async update(data) {
+    static update(id, data) {
         return data
     }
 
-    async create(body, author) {
+    static create(id, data) {
         return {
             id: 12,
             body: "this is a article with id 12",
@@ -25,11 +23,11 @@ export class ArticleModel {
 
     }
 
-    async remove(id) {
+    static remove(id) {
         return id
     }
 
-    async list() {
+    static list(resource) {
         return [
             {
                 id: 1,

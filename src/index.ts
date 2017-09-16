@@ -13,7 +13,7 @@ import {About} from './app/components/about/view';
 import {Login} from './app/components/auth/user/login';
 import {Logout} from './app/components/auth/logout';
 import {Signup} from './app/components/auth/user/signup';
-import {UserDashboard} from './app/components/dash/user/view';
+import {UserDashboard} from './app/components/dash/user';
 import {UserProfile} from './app/components/profile/user/view';
 
 
