@@ -1,4 +1,4 @@
-export abstract class Presenter{
+export abstract class Presenter {
     get(resource){
 
     }

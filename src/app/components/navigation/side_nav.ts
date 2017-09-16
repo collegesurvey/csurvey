@@ -2,7 +2,8 @@ import * as m from 'mithril'
 
 
 export class SideNav {
+
     view(vnode) {
-        m("This is our side navigation")
+        return m(".side-nav", "This is our side navigation")
     }
 }
