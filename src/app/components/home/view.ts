@@ -3,7 +3,7 @@ import * as m from 'mithril'
 export class Home {
     view(vnode){
         return (
-            m("div", "Under construction please recheck in a few weeks")
+            m("div", "College lists to be added here with a search bar!")
         )
     }
 }

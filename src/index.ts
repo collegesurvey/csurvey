@@ -14,7 +14,7 @@ import {Login} from './app/components/auth/user/login';
 import {Logout} from './app/components/auth/logout';
 import {Signup} from './app/components/auth/user/signup';
 import {UserDashboard} from './app/components/dash/user';
-import {UserProfile} from './app/components/profile/user/view';
+import {UserProfile} from './app/components/profile/user';
 import {Home} from "./app/components/home/view";
 import {Contact} from "./app/components/contact";
 
@@ -58,12 +58,12 @@ m.route(document.body, "/", {
 	},
 	"/account/dash": {
 		render: function(vnode) {
-			return m(Layout, m(UserDashboard))
+			return m(Layout, vnode.attrs, m(UserDashboard, vnode.attrs))
 		}
 	},
     "/account/profile": {
         render: function(vnode) {
-            return m(Layout, m(UserProfile))
+            return m(Layout, vnode.attrs, m(UserProfile, vnode.attrs))
         }
     },
 });

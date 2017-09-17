@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack'); //to access built-in plugins
 let CopyWebpackPlugin = require('copy-webpack-plugin');
 let ExtractTextPlugin = require('extract-text-webpack-plugin');
 
@@ -44,6 +45,7 @@ module.exports = {
     },
     context: path.join(__dirname, 'src'),
     plugins: [
+        new webpack.optimize.UglifyJsPlugin(),
         new ExtractTextPlugin('styles.css'),
         new CopyWebpackPlugin([
             { from: 'public/html' }
