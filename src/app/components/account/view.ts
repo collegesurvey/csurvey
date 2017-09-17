@@ -1,16 +1,14 @@
-import * as m from 'mithril'
-import {Factory} from "../user/factory"
+import {UserPresenter} from "../user/presenter";
 
 export class Account {
 
-    user_factory: Factory;
+    user_prsntr: UserPresenter;
 
     constructor() {
-        this.user_factory = new Factory()
+        this.user_prsntr = new UserPresenter()
     }
 
     view(vnode) {
-        let Component = this.user_factory.getComponent(vnode.attrs.name);
-        return m(Component, {name: vnode.attrs.name});
+        return this.user_prsntr.get(vnode.attrs.name);
     }
 }

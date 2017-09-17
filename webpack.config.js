@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack'); //to access built-in plugins
 let CopyWebpackPlugin = require('copy-webpack-plugin');
 let ExtractTextPlugin = require('extract-text-webpack-plugin');
 
@@ -14,7 +15,7 @@ module.exports = {
     resolve: {
         extensions: [".js", ".jsx", ".ts"]
     },
-    devtool: 'eval-source-map',
+    devtool: 'source-map',
     module: {
         loaders: [{
             test: /\.(ts|tsx)$/,
@@ -44,6 +45,9 @@ module.exports = {
     },
     context: path.join(__dirname, 'src'),
     plugins: [
+        new webpack.optimize.UglifyJsPlugin(
+            {sourceMap: true}
+        ),
         new ExtractTextPlugin('styles.css'),
         new CopyWebpackPlugin([
             { from: 'public/html' }

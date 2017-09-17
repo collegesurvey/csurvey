@@ -1,7 +1,8 @@
 import * as m from 'mithril'
 
+import {MainNav} from "./navigation/main-nav";
 import {config} from '../common/constants'
-import {Account} from './account/view'
+import {Footer} from "./footer";
 
 export class Layout {
 
@@ -21,28 +22,9 @@ export class Layout {
 		return (
             m("main.layout",
                 [
-                    m("nav.navbar.navbar-default.navbar-fixed-top",
-                        m(".container-fluid",
-                            [
-                                m(".navbar-header",
-                                    m("a.navbar-brand[href='/']", {oncreate: m.route.link}, "CollegeSurvey")
-                                ),
-                                m(".collapse.navbar-collapse[id='navbar']",
-                                    [
-                                        m("ul.nav.navbar-nav.navbar-left",
-                                            m("li",
-                                                m("a[href='/about']", {oncreate: m.route.link}, "About")
-                                            )
-                                        ),
-                                        m("ul.nav.navbar-nav.navbar-right",
-                                            m(Account, {name: vnode.attrs.user})
-                                        )
-                                    ]
-                                )
-                            ]
-                        )
-                    ),
-                    m("section.starter-template.container-fluid", vnode.children)
+                    m(MainNav, {user: vnode.attrs.user}),
+                    m("section.starter-template.container-fluid", vnode.children),
+                    m(Footer)
                 ]
             )
 		)

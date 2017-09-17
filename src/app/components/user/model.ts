@@ -35,7 +35,7 @@ const UserLoginQuery = gql(`
             }
         }`);
 
-class ClassicUserModel {
+class UserModel {
 
     token: string;
 
@@ -85,4 +85,4 @@ class ClassicUserModel {
 }
 
 // need singleton of this guy
-export const User = new ClassicUserModel();
+export const User = new UserModel();
