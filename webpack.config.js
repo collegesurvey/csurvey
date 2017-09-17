@@ -15,7 +15,7 @@ module.exports = {
     resolve: {
         extensions: [".js", ".jsx", ".ts"]
     },
-    devtool: 'eval-source-map',
+    devtool: 'source-map',
     module: {
         loaders: [{
             test: /\.(ts|tsx)$/,
@@ -45,7 +45,9 @@ module.exports = {
     },
     context: path.join(__dirname, 'src'),
     plugins: [
-        new webpack.optimize.UglifyJsPlugin(),
+        new webpack.optimize.UglifyJsPlugin(
+            {sourceMap: true}
+        ),
         new ExtractTextPlugin('styles.css'),
         new CopyWebpackPlugin([
             { from: 'public/html' }
