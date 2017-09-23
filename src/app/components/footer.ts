@@ -15,11 +15,6 @@ export class Footer {
                                 m("li",
                                     m("a[href='/contact']", {oncreate: m.route.link}, "Contact Us")
                                 )
-                            ),
-                            m("ul.nav.navbar-nav.navbar-right",
-                                m("li",
-                                    m("a[href='/blog']", {oncreate: m.route.link}, "Blog")
-                                )
                             )
                         ]
                     )

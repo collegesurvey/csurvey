@@ -1,37 +1,18 @@
 import * as m from 'mithril'
-import {User} from "../../user/model"
-import {User as userInterface} from '../../user/base'
-import {Recaptcha} from "../../../common/captcha"
 
-//data binding helper function
-function binds(data) {
-  return function(e) {
-    data[e.target.name] = e.target.value;
-  }
-}
-
+import {binds} from "../../common/util";
+import {Recaptcha} from "../../common/captcha";
 
 export class Signup {
 
-    user: userInterface;
-
-    constructor() {
-        this.user = {
-          username: "",
-          email: "",
-          password: "",
-        };
-    }
-
-    register(event) {
-      event.preventDefault();
-      return User.create(this.user.username, this.user.email, this.user.password)
+    register(resource) {
+        throw new Error("NotImplementedError")
     }
 
     view(vnode) {
         return (
             m("div",
-                m("form.form-inline[id='signup']", {onchange: binds(this.user)},
+                m("form.form-inline[id='signup']", {onchange: binds(this)},
                     m(".form-group",
                         [
                             "Username",
@@ -40,7 +21,7 @@ export class Signup {
                             m("br"),
                             "Email",
                             m("br"),
-                            m("input[name='email'][type='text']"),
+                            m("input[name='id'][type='text']"),
                             m("br"),
                             "Password",
                             m("br"),

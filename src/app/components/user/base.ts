@@ -1,5 +1,3 @@
-export interface User {
+export interface UserInterface extends Operator{
     username: string
-    email: string
-    password: string
 }
