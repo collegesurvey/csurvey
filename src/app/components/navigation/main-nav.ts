@@ -1,5 +1,5 @@
 import * as m from 'mithril'
-import {Account} from '../account/view'
+import {UserFactory} from '../factory/user'
 
 export class MainNav {
 
@@ -15,10 +15,13 @@ export class MainNav {
                             m("ul.nav.navbar-nav.navbar-left",
                                 m("li",
                                     m("a[href='/about']", {oncreate: m.route.link}, "About")
+                                ),
+                                m("li",
+                                    m("a[href='/reviews']", {oncreate: m.route.link}, "Reviews")
                                 )
                             ),
                             m("ul.nav.navbar-nav.navbar-right",
-                                m(Account, {name: vnode.attrs.user})
+                                m(UserFactory, {name: vnode.attrs.user})
                             )
                         ]
                     )

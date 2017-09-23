@@ -1,13 +1,13 @@
 import * as m from 'mithril'
 
 import {MainNav} from "./navigation/main-nav";
-import {config} from '../common/constants'
+import {constants} from '../common/constants'
 import {Footer} from "./footer";
 
 export class Layout {
 
 	checkUser(vnode) {
-		let user = JSON.parse(localStorage.getItem(config.USER));
+		let user = JSON.parse(localStorage.getItem(constants.META));
 
 		if (user) {
 			vnode.attrs.user = user.username;

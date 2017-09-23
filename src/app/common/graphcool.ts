@@ -35,4 +35,4 @@ class Graphcool {
     }
 }
 
-export const Backend = new Graphcool();
+export const graphcool = new Graphcool();

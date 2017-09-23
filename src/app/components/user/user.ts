@@ -12,12 +12,12 @@ export class UserView {
                     m("ul[class='dropdown-menu']",
                         [
                             m("li",
-                                m("a[href='#!/account/dash']",
+                                m("a[href='#!/factory/dash']",
                                     "Dashboard"
                                 )
                             ),
                             m("li",
-                                m("a[href='#!/account/profile']",
+                                m("a[href='#!/factory/profile']",
                                     "Profile"
                                 )
                             ),

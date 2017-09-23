@@ -17,6 +17,10 @@ export class ArticlePresenter  implements Presenter {
         })
     }
 
+    create(resource) {
+        throw new Error("NotImplementedError")
+    }
+
     update(resource_id, data) {
         return ArticleModel.update(resource_id, data)
     }

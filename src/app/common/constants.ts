@@ -1,3 +1,3 @@
-export const config = {
-    USER: "user-meta"
+export const constants = {
+    META: "meta",
 };

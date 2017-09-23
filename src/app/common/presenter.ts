@@ -7,6 +7,10 @@ export abstract class Presenter {
 
     }
 
+    create(resource){
+
+    }
+
     update(resource, data) {
 
     }

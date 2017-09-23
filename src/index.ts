@@ -8,11 +8,11 @@ import "./public/css/starter-template.css"
 import "./public/css/starter-template.css"
 
 import {Layout} from './app/components/layout';
-import {Blog} from './app/components/blog/view';
+import {Reviews} from './app/components/reviews/view';
 import {About} from './app/components/about/view';
-import {Login} from './app/components/auth/user/login';
+import {UserLogin} from './app/components/auth/user';
 import {Logout} from './app/components/auth/logout';
-import {Signup} from './app/components/auth/user/signup';
+import {UserSignup} from './app/components/register/user';
 import {UserDashboard} from './app/components/dash/user';
 import {UserProfile} from './app/components/profile/user';
 import {Home} from "./app/components/home/view";
@@ -36,19 +36,19 @@ m.route(document.body, "/", {
             return m(Layout, m(Contact))
         }
     },
-    "/blog": {
+    "/reviews": {
         render: function(vnode) {
-            return m(Layout, m(Blog))
+            return m(Layout, m(Reviews))
         }
     },
 	"/signup": {
 		render: function(vnode) {
-			return m(Layout, m(Signup))
+			return m(Layout, m(UserSignup))
 		}
 	},
 	"/login": {
 		render: function(vnode) {
-			return m(Layout, m(Login))
+			return m(Layout, m(UserLogin))
 		}
 	},
 	"/logout": {
