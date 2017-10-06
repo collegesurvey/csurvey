@@ -1,21 +1,22 @@
-import {UserInterface} from '../user/base'
-import {UserRegisterService} from "./service";
+import {StudentRegisterService} from "../../services/register/student";
+import {RegisterService} from "../../services/register/base";
+import {StudentInterface} from '../student/base'
 import {Signup} from "./base";
 
 
-export class UserSignup extends Signup implements UserInterface{
+export class StudentSignup extends Signup implements StudentInterface{
 
     id: string;
     username: string;
     password: string;
-    svc: UserRegisterService;
+    svc: RegisterService;
 
     constructor(vnode) {
         super();
         this.username = "";
         this.password = "";
         this.id = "";
-        this.svc = new UserRegisterService()
+        this.svc = new StudentRegisterService()
 
     }
 

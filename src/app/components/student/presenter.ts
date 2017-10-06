@@ -1,17 +1,17 @@
 import * as m from 'mithril'
 import {Presenter} from "../../common/presenter";
-import {UserView} from "./user";
-import {GuestView} from "./guest";
-import {UserModel} from "./model";
+import {StudentView} from "./view";
+import {GuestView} from "../../common/guest";
+import {StudentModel} from "./model";
 
 
-export class UserPresenter implements Presenter {
+export class StudentPresenter implements Presenter {
 
     get(resource) {
         if (resource == "Guest") {
             return m(GuestView)
         } else {
-            return m(UserView, {name: resource})
+            return m(StudentView, {name: resource})
         }
     }
 
@@ -20,7 +20,7 @@ export class UserPresenter implements Presenter {
     }
 
     create(resource) {
-        return UserModel.create(
+        return StudentModel.create(
             resource.username,
             resource.id,
             resource.password
@@ -28,6 +28,7 @@ export class UserPresenter implements Presenter {
     }
 
     update(resource, data) {
+        throw new Error("NotImplementedError")
     }
 
     remove(resource) {

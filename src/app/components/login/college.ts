@@ -1,6 +1,5 @@
 import {Login} from "./base";
-import {CollegeAuthService} from "./service";
-import {CollegeInterface} from "../college/base";
+import {CollegeAuthService} from "../../services/auth/college";
 
 export class CollegeLogin extends Login {
 
