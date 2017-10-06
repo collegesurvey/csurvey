@@ -4,7 +4,7 @@ import {default as gql} from "graphql-tag"
 import {constants} from '../../common/constants'
 import { graphcool as backend } from "../../common/graphcool"
 
-const UserCreateQuery = gql(`
+const StudentCreateQuery = gql(`
     mutation createUser($name: String!, $email: String!, $password: String!) {
             createUser(
                 username: $name
@@ -20,7 +20,7 @@ const UserCreateQuery = gql(`
             }
         }`);
 
-export class UserModel {
+export class StudentModel {
 
     token: string;
 
@@ -35,7 +35,7 @@ export class UserModel {
             password: password
         };
         try{
-            await backend.mutate(UserCreateQuery, data);
+            await backend.mutate(StudentCreateQuery, data);
             m.route.set("/login")
         } catch(e) {
             console.log(e)

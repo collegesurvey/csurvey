@@ -1,4 +1,4 @@
-export interface CollegeInterface extends Operator {
+export interface CollegeInterface extends UserInterface {
     username: string
     college_name: string
     location: string

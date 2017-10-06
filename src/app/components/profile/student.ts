@@ -1,6 +1,6 @@
 import * as m from 'mithril'
 
-export class UserProfile {
+export class StudentProfile {
 
     userName: string;
 

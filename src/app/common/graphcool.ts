@@ -1,5 +1,5 @@
 import ApolloClient, { createNetworkInterface } from 'apollo-client';
-import { config } from '../data/config'
+import { config } from '../_data/config'
 
 
 class Graphcool {

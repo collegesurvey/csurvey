@@ -1,6 +1,6 @@
 import * as m from 'mithril'
 
-export class UserView {
+export class StudentView {
 
     view(vnode) {
         return(
@@ -12,12 +12,12 @@ export class UserView {
                     m("ul[class='dropdown-menu']",
                         [
                             m("li",
-                                m("a[href='#!/factory/dash']",
+                                m("a[href='#!/account/dash']",
                                     "Dashboard"
                                 )
                             ),
                             m("li",
-                                m("a[href='#!/factory/profile']",
+                                m("a[href='#!/account/profile']",
                                     "Profile"
                                 )
                             ),

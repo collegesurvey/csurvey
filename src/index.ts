@@ -1,4 +1,4 @@
-import './jq'
+import './jquery'
 
 import * as m from  'mithril'
 import "../node_modules/bootstrap/dist/js/bootstrap.min"
@@ -10,15 +10,16 @@ import "./public/css/starter-template.css"
 import {Layout} from './app/components/layout';
 import {Reviews} from './app/components/reviews/view';
 import {About} from './app/components/about/view';
-import {UserLogin} from './app/components/auth/user';
-import {Logout} from './app/components/auth/logout';
-import {UserSignup} from './app/components/register/user';
-import {UserDashboard} from './app/components/dash/user';
-import {UserProfile} from './app/components/profile/user';
+import {StudentLogin} from './app/components/login/user';
+import {Logout} from './app/components/login/logout';
+import {StudentSignup} from './app/components/signup/student';
+import {StudentDashboard} from './app/components/dash/student';
+import {StudentProfile} from './app/components/profile/student';
 import {Home} from "./app/components/home/view";
 import {Contact} from "./app/components/contact";
+import {VERSION} from "./version";
 
-
+console.log(VERSION);
 
 m.route(document.body, "/", {
 	"/": {
@@ -43,12 +44,12 @@ m.route(document.body, "/", {
     },
 	"/signup": {
 		render: function(vnode) {
-			return m(Layout, m(UserSignup))
+			return m(Layout, m(StudentSignup))
 		}
 	},
 	"/login": {
 		render: function(vnode) {
-			return m(Layout, m(UserLogin))
+			return m(Layout, m(StudentLogin))
 		}
 	},
 	"/logout": {
@@ -58,12 +59,12 @@ m.route(document.body, "/", {
 	},
 	"/account/dash": {
 		render: function(vnode) {
-			return m(Layout, vnode.attrs, m(UserDashboard, vnode.attrs))
+			return m(Layout, vnode.attrs, m(StudentDashboard, vnode.attrs))
 		}
 	},
     "/account/profile": {
         render: function(vnode) {
-            return m(Layout, vnode.attrs, m(UserProfile, vnode.attrs))
+            return m(Layout, vnode.attrs, m(StudentProfile, vnode.attrs))
         }
     },
 });

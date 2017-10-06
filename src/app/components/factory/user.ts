@@ -1,4 +1,4 @@
-import {UserPresenter} from "../user/presenter";
+import {StudentPresenter} from "../student/presenter";
 import {Presenter} from "../../common/presenter";
 
 export class UserFactory {
@@ -6,7 +6,7 @@ export class UserFactory {
     prsntr: Presenter;
 
     constructor() {
-        this.prsntr = new UserPresenter()
+        this.prsntr = new StudentPresenter()
     }
 
     view(vnode) {

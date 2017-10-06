@@ -1,4 +1,4 @@
-interface Operator {
+interface UserInterface {
     id: string
     password: string
 }
