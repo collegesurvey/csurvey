@@ -1,7 +1,7 @@
 import * as m from 'mithril'
 import {binds} from "../../common/util";
 import {Recaptcha} from "../../common/captcha";
-
+import { InputBox } from "../input";
 
 export class Login {
 
@@ -17,11 +17,11 @@ export class Login {
                         [
                             "Email",
                             m("br"),
-                            m("input[type='text'][name='id']"),
+                            m(InputBox, {type: 'text', name:'id'}),
                             m("br"),
                             "Password",
                             m("br"),
-                            m("input[type='password'][name='password']"),
+                            m(InputBox, {type: 'password', name:'password'}),
                             m("br"),
                             m("button", {onclick: this.login.bind(this)}, "Submit"),
                             m("br"),

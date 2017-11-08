@@ -1,2 +1,2 @@
-import * as jquery from 'jquery'
+import * as jquery from 'jquery';
 window.jQuery = jquery;
