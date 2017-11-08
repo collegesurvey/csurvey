@@ -41,7 +41,8 @@ module.exports = {
       watchContentBase: true,
       watchOptions: {
         ignored: /node_modules/
-      }
+      },
+      hot: true
     },
     context: path.join(__dirname, 'src'),
     plugins: [
