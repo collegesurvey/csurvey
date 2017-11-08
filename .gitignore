@@ -7,3 +7,4 @@ build/
 *.log
 out/
 .vscode/chrome
+package-lock.json
