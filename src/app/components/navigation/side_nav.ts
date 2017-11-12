@@ -6,11 +6,9 @@ export class SideNav {
         return (
                 m("row", 
                     [
-                        m(".col-sm-3.col-lg-2",
-                            m("navbar.navbar-default.navbar-fixed-side",
-                                m(".container",
-                                    m("collapse.navbar-collapse",
-                                        m("ul.nav.navbar-nav",
+                            m(".navbar-default.sidebar",
+                                    m(".navbar-collapse",
+                                        m("ul.nav.in",
                                             [
                                                 m("li",
                                                     m("a[href='/account/editor']", {oncreate: m.route.link}, "Review")
@@ -20,11 +18,11 @@ export class SideNav {
                                                 )
                                             ]
                                         )
-                                    )
+                                    
                                 )
                             )
-                        ),
-                        m(".col-sm-9.col-lg-10", vnode.children)
+                        ,
+                        m("div", vnode.children)
                     ]
                 )
             )
