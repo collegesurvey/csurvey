@@ -2,7 +2,7 @@ import * as m from 'mithril'
 
 import {Article} from "./view";
 import {ArticleModel} from "./model";
-import {ArticleBuilder} from './builder'
+import {ArticleBuilder} from './editor'
 import {Presenter} from "../../common/presenter";
 
 export class ArticlePresenter  implements Presenter {
