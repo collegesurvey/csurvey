@@ -2,6 +2,7 @@ import * as m from 'mithril'
 
 import {Article} from "./view";
 import {ArticleModel} from "./model";
+import {ArticleBuilder} from './editor'
 import {Presenter} from "../../common/presenter";
 
 export class ArticlePresenter  implements Presenter {
@@ -18,7 +19,7 @@ export class ArticlePresenter  implements Presenter {
     }
 
     create(resource) {
-        throw new Error("NotImplementedError")
+        return ArticleModel.create(resource)
     }
 
     update(resource_id, data) {
@@ -27,5 +28,9 @@ export class ArticlePresenter  implements Presenter {
 
     remove(resource_id) {
         return ArticleModel.remove(resource_id)
+    }
+
+    builder() {
+        return m(ArticleBuilder)
     }
 }

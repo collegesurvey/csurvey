@@ -1,7 +1,10 @@
 node_modules/
 typings/
 assets/
-.vscode/
 .idea/
 build/
 *.map
+*.log
+out/
+.vscode/chrome
+package-lock.json

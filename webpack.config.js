@@ -37,11 +37,12 @@ module.exports = {
     devServer: {
       contentBase: path.join(__dirname, "assets"),
       compress: false,
-      port: 9000,
+      port: 9090,
       watchContentBase: true,
       watchOptions: {
         ignored: /node_modules/
-      }
+      },
+      hot: true
     },
     context: path.join(__dirname, 'src'),
     plugins: [

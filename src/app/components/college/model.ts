@@ -5,25 +5,25 @@ export class CollegeModel implements CollegeInterface {
     college_name: string;
     location: string;
     email: string;
-    phone: string;
+    phone: number;
     id: string;
     password: string;
-
-    create(resource) {
+    
+    static create(resource) {
     }
 
-    update(resource) {
+    static update(resource) {
     }
 
-    remove(resource) {
+    static remove(resource) {
     }
 
-    by_id(resource_id){
+    static by_id(resource_id){
     }
 
-    by_ids(resource_ids) {
+    static by_ids(resource_ids) {
     }
 
-    by_filter(filter){
+    static by_name(name){
     }
 }

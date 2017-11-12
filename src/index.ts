@@ -4,8 +4,7 @@ import * as m from  'mithril'
 import "../node_modules/bootstrap/dist/js/bootstrap.min"
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css"
 import "./public/css/starter-template.css"
-
-import "./public/css/starter-template.css"
+import "./public/css/navbar-fixed-side.css"
 
 import {Layout} from './app/components/layout';
 import {Reviews} from './app/components/reviews/view';
@@ -17,6 +16,8 @@ import {StudentDashboard} from './app/components/dash/student';
 import {StudentProfile} from './app/components/profile/student';
 import {Home} from "./app/components/home/view";
 import {Contact} from "./app/components/contact";
+import {SideNav} from "./app/components/navigation/side_nav";
+import {ArticleBuilder} from "./app/components/article/editor";
 import {VERSION} from "./version";
 
 console.log(VERSION);
@@ -59,12 +60,17 @@ m.route(document.body, "/", {
 	},
 	"/account/dash": {
 		render: function(vnode) {
-			return m(Layout, vnode.attrs, m(StudentDashboard, vnode.attrs))
+			return m(Layout, vnode.attrs, m(SideNav, m(StudentDashboard, vnode.attrs)))
 		}
 	},
     "/account/profile": {
         render: function(vnode) {
-            return m(Layout, vnode.attrs, m(StudentProfile, vnode.attrs))
+            return m(Layout, vnode.attrs, m(SideNav, m(StudentProfile, vnode.attrs)))
+        }
+	},
+    "/account/editor": {
+        render: function(vnode) {
+            return m(Layout, vnode.attrs, m(SideNav, m(ArticleBuilder, vnode.attrs)))
         }
     },
 });
